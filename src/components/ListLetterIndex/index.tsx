@@ -1,4 +1,5 @@
-import  React, { useState } from "react";
+import * as React from "react";
+import { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { ListLetterIndexProps } from "./types"
 import { styles } from "./styles";

@@ -7,7 +7,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
+var React = __importStar(require("react"));
+var react_1 = require("react");
 var react_native_1 = require("react-native");
 var styles_1 = require("./styles");
 exports.ListLetterIndex = function (_a) {
