@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React, { useState } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { ListLetterIndexProps } from "./types"
 import { styles } from "./styles";
@@ -31,9 +31,26 @@ export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
     );
   };
 
+  const [navHeight, setNavHeight] = useState(0)
+
+  const onLayout = (event: any) => {
+    const { height } = event.nativeEvent.layout
+    setNavHeight(height)
+  }
+
   return (
-    <View style={styles.letterIndexContainer}>
+    <View style={[
+      styles.letterIndexContainer,
+      {
+        transform: [
+          {
+            translateY: -(navHeight / 2)
+          }
+        ]
+      }
+    ]}>
       <FlatList
+        onLayout={onLayout}
         contentContainerStyle={styles.letterIndexList}
         data={sectionData}
         keyExtractor={i => i.title}

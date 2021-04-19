@@ -7,9 +7,6 @@ export declare const styles: {
         height: string;
         position: "absolute";
         top: string;
-        transform: {
-            translateY: number;
-        }[];
         right: number;
     };
     letterIndexList: {

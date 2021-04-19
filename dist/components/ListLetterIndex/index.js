@@ -7,7 +7,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(require("react"));
+var react_1 = __importStar(require("react"));
 var react_native_1 = require("react-native");
 var styles_1 = require("./styles");
 exports.ListLetterIndex = function (_a) {
@@ -28,7 +28,21 @@ exports.ListLetterIndex = function (_a) {
         </react_native_1.View>
       </react_native_1.TouchableOpacity>);
     };
-    return (<react_native_1.View style={styles_1.styles.letterIndexContainer}>
-      <react_native_1.FlatList contentContainerStyle={styles_1.styles.letterIndexList} data={sectionData} keyExtractor={function (i) { return i.title; }} scrollEnabled={false} renderItem={onRenderCustomIndexLetter}/>
+    var _b = react_1.useState(0), navHeight = _b[0], setNavHeight = _b[1];
+    var onLayout = function (event) {
+        var height = event.nativeEvent.layout.height;
+        setNavHeight(height);
+    };
+    return (<react_native_1.View style={[
+        styles_1.styles.letterIndexContainer,
+        {
+            transform: [
+                {
+                    translateY: -(navHeight / 2)
+                }
+            ]
+        }
+    ]}>
+      <react_native_1.FlatList onLayout={onLayout} contentContainerStyle={styles_1.styles.letterIndexList} data={sectionData} keyExtractor={function (i) { return i.title; }} scrollEnabled={false} renderItem={onRenderCustomIndexLetter}/>
     </react_native_1.View>);
 };
