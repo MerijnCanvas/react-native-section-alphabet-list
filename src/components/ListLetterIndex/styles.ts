@@ -8,30 +8,35 @@ const sizes = {
 
 export const styles = StyleSheet.create({
   letterIndexContainer: {
-    width: sizes.containerWidth,
-    height: "100%",
-    position: "absolute",
-    top: 0,
-    right: 0,
+      backgroundColor: 'white',
+      borderRadius: 30,
+      padding: 5,
+      width: 'auto',
+      height: 'auto',
+      position: "absolute",
+      top: '50%',
+      transform: [
+          {
+              translateY: 100
+          }
+      ],
+      right: 0,
   },
-
   letterIndexList: {
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
   },
-
   letterIndexItem: {
-    width: sizes.containerWidth,
-    height: sizes.itemHeight,
-    alignItems: "center",
-    justifyContent: "center",
+      width: sizes.containerWidth,
+      height: sizes.itemHeight,
+      alignItems: "center",
+      justifyContent: "center",
   },
-
   letterIndexLabel: {
-    fontSize: sizes.itemFontSize,
-    fontWeight: "bold",
-    color: "grey",
+      fontSize: sizes.itemFontSize,
+      fontWeight: "bold",
+      color: "grey",
   },
 });
 
