@@ -6,7 +6,6 @@ export declare const styles: {
         width: string;
         height: string;
         position: "absolute";
-        top: string;
         right: number;
     };
     letterIndexList: {
