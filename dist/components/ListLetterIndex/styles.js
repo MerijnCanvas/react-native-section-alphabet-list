@@ -14,6 +14,7 @@ exports.styles = react_native_1.StyleSheet.create({
         width: 'auto',
         height: 'auto',
         position: "absolute",
+        top: '30%',
         right: 0,
     },
     letterIndexList: {
